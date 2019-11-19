@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Challenge 3</title>
+
+    <style>
+        /* Write your CSS code here */
+        .container {
+          padding: 20px;
+          background-color: lightgrey;
+          display: inline-block;
+          overflow: hidden;
+        }
+        .content {
+          font-size: 24px;
+          line-height: 24px;
+          font-weight: 600;
+          height: 12px;
+          overflow: hidden;
+          display: flex;
+          animation-name: flow;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+        }
+        #top {
+          top: 0px;
+          align-items: flex-start;
+          color: red;
+        }
+        #bottom {
+          top: 12px;
+          align-items: flex-end;
+          animation-delay: 0.5s;
+        }
+        @keyframes flow {
+          0% {transform: translateX(-200%);}
+          25% {transform: translateX(0);}
+          50% {transform: translateX(0);}
+          75% {transform: translateX(0);}
+          100% {transform: translateX(200%);}
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Modify the mark up to suit your needs -->
+    <div class="container">
+      <div id='top' class="content">AWESOME ALPHA</div>
+      <div id='bottom' class="content">AWESOME ALPHA</div>
+    </div>
+    
+</body>
+</html>
