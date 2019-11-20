@@ -18,4 +18,52 @@
 
 </body>
 
+<script>
+  let elem = document.querySelector('h2')
+  const words = elem.innerHTML.trim().split(' ').map(
+    word => `<span><div>${word}</div></span>`
+  ).join(' ')
+  elem.innerHTML = words
+
+  const wordSpans = document.querySelectorAll('h2 span')
+  let styledWordSpans = []
+  for (let i = 0; i < wordSpans.length; i++) {
+    const wordSpan = wordSpans[i]
+    wordSpan.children[0].style.animationDelay = `${0.02 * i}s`
+    styledWordSpans.push(wordSpan)
+  }
+  elem.children = styledWordSpans.join(' ')
+</script>
+
+<style>
+  body {
+    background-color: black;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  h2 span {
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+  }
+
+  h2 span div {
+    animation-name: flow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes flow {
+    0% {opacity: 0; transform: translateY(24px);}
+    50% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(-24px);}
+  }
+</style>
+
 </html>
