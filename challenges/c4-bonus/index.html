@@ -8,6 +8,45 @@
   <title>Text transition challenge</title>
 </head>
 
+<style>
+  body{
+    background-color: black;
+  }
+  #outer-span{
+    display: inline-block;
+    overflow: hidden
+  }
+ 
+  #inner-span{
+    color:white;
+    display: inline-block;
+    animation: 1s infinite moveup;
+  }
+
+  @keyframes moveup {
+    0% {
+      transform: translateY(50px);
+    }
+
+    25% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(0px);
+    }
+
+    75% {
+      transform: translateY(0px);
+    }
+
+    100% {
+      transform: translateY(-50px);
+    }
+  }
+</style>
+
+
 <body>
 
 
@@ -17,5 +56,28 @@
   </h2>
 
 </body>
+<script>
+  let h2 = document.getElementsByTagName("h2")[0]
+  let content = h2.innerHTML
+  let splited = content.trim().split(/[\s\n]+/g)
+  console.log(splited)
+  let newH2 = document.createElement('h2')
+  while(splited.length>0){
+    let innerSpan = document.createElement('span')
+    let outerSpan = document.createElement('span')
+    innerSpan.setAttribute('id','inner-span')
+    outerSpan.setAttribute('id','outer-span')
+    let text = document.createTextNode(splited.shift())
+    innerSpan.appendChild(text)
+    outerSpan.appendChild(innerSpan)
+    let space = document.createElement('span')
+    space.innerHTML = ' '
+    newH2.insertBefore(outerSpan,null)
+    newH2.insertBefore(space, outerSpan)
+  }
+  document.body.appendChild(newH2)
+  h2.remove()
+
+</script>
 
 </html>

@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Challenge 1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Challenge 1</title>
 
-    <style>
-        /* Write your CSS code here */
-    
-    </style>
+  <style>
+    /* Write your CSS code here */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .main-area{
+      position: relative;
+      display: inline-block;
+      border: 1px dashed blue;
+      padding: 20px;
+    }
+    .main-area .tooltip-text{
+      visibility: hidden;
+      padding: 10px;
+      background-color: #555;
+      color: white;
+      border-radius: 5px;
+
+      position: absolute;
+      bottom: 125%;
+      left: 25%;
+
+    }
+    .main-area .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 45%;
+      border-left: 6px solid transparent;
+	    border-right: 6px solid transparent;
+	    border-top: 12px solid #555;
+    }
+    .main-area:hover .tooltip-text{
+      visibility: visible
+    }
+  
+  </style>
 
 </head>
 <body>
 
-    <!-- Modify the mark up to suit your needs -->
-    <div class="main-area">
-        Hover me to show pop-up
-    </div>
+  <!-- Modify the mark up to suit your needs -->
+  <div class="main-area">
+    Hover me to show popup
+    <span class="tooltip-text">I'm a popup</span>
+  </div>
     
 </body>
 </html>
