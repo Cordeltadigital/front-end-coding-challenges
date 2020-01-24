@@ -19,25 +19,25 @@
             margin: 0;
         }
         /* End Reset */
+
         /* Typography */
         body {
             font-family: sans-serif;
         }
         /* End Typography */
+
         /* Header */
         header {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            margin: 5px 5px 0 5px;
-
-
-
+            align-items: center;
+            margin: 10px 10px 0 10px;
             border: 1px solid blue;
         }
         /* Logo */
         header img {
-            margin: 0 0 0 20px;
-            height: 80px;
+            height: 70px;
         }
         /* End Logo */
         /* Navigation Menu */
@@ -51,43 +51,120 @@
             display: inline-block;
         }
         .top-nav li a {
-            margin: 0 20px 0 0;
+            margin: 0 10px;
             padding: 3px;
         }
         /* End Navigation Menu */
         /* End Header */
+
         /* Main */
         main {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             margin: 0 auto;
             padding: 10px;
-            max-width: 1200px;
-
-
             border: 1px solid green;
         }
         /* End Main */
+
         /* Article */
         article {
-            width: 60%;
-
+            width: 100%;
             border: 1px solid red;
         }
         /* End Article */
+
+        /* Article paragraphs */
+        article p {
+            line-height: 1.6;
+        }
+        /* End Article paragraphs */
+
         /* Sidebar */
         aside {
-            display: inline-block;
-            width: 39%;
+            width: 100%;
             height: min-content;
-
-
             border: 1px solid yellow;
         }
         .sidebar {
             list-style: none;
         }
         /* End Sidebar */
+
+        /* Responsiveness */
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) { 
+            /* Main */
+            main {
+                max-width: 540px;
+            }
+            /* End Main */
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            /* Header */
+            header {
+                flex-direction: row;
+            }
+            /* End Header */
+            
+            /* Logo */
+            header img {
+                margin: 0 0 0 20px;
+                height: 80px;
+            }
+            /* End Logo */
+
+            /* Nav */
+            .top-nav li a { 
+                margin: 0 20px 0 0;
+
+            }
+            /* End Nav */
+
+            /* Main */
+            main {
+                flex-direction: row;
+                max-width: 720px;
+            }
+            /* End Main */
+
+            /* Article */
+            article {
+                width: 60%;
+            }
+            /* End Article */
+            /* Article paragraphs */
+            article p {
+                line-height: unset;
+            }
+            /* End Article paragraphs */
+            /* Sidebar */
+            aside {
+                width: 39%;
+            }
+            /* End Sidebar */
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            /* Main */
+            main {
+                max-width: 960px;
+            }
+            /* End Main */
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1260px) {
+            /* Main */
+            main {
+                max-width: 1200px;
+            }
+            /* End Main */
+        }
     </style>
 
 </head>
