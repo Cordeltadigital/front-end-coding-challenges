@@ -7,8 +7,63 @@
     <title>Challenge 1</title>
 
     <style>
-        /* Write your CSS code here */
-    
+        /* Hover area */
+        .main-area {
+            display: inline-block;
+            margin: 60px 20px 20px;
+            padding: 20px 30px;
+            position: relative;
+            border: 1px dashed blue;
+        }
+        /* End Hover Area */
+        /* Tooltip */
+        .tooltip {
+            display: none;
+            margin: 0 auto;
+            padding: 10px;
+            position: absolute;
+            right: 25%;
+            bottom: calc(100% + 15px);
+            left: 25%;
+            /* width: 110px; */
+            background-color: #363636;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        /* End Tooltip */
+        /* Tooltip Caret */
+        .tooltip:before {
+            content: ""; 
+            margin: 0 auto;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            width: 0;
+            height: 0; 
+            border-style: solid;
+            border-width: 12px 5px 0 5px;
+            border-color: #363636 transparent transparent transparent;
+        }
+        .tooltip:after {
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            width: 9px;
+            height: 0.5px; 
+            background-color: #110f19;
+        }
+        /* End Tooltip Caret */
+        /* Show tooltip */
+        .main-area:hover .tooltip {
+            display: block;
+        }
+        /* End Show Tooltip */
     </style>
 
 </head>
@@ -16,7 +71,10 @@
 
     <!-- Modify the mark up to suit your needs -->
     <div class="main-area">
-        Hover me to show pop-up
+        Hover me to show popup
+        <div class="tooltip">
+            I'm a popup
+        </div>
     </div>
     
 </body>
