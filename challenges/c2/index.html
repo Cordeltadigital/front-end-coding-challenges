@@ -7,7 +7,87 @@
     <title>Challenge 2</title>
 
     <style>
-        /* Write your css here */
+        /* Reset */
+        body,
+        header,
+        main,
+        article,
+        aside {
+            box-sizing: content-box;
+        }
+        body {
+            margin: 0;
+        }
+        /* End Reset */
+        /* Typography */
+        body {
+            font-family: sans-serif;
+        }
+        /* End Typography */
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 5px 0 5px;
+
+
+
+            border: 1px solid blue;
+        }
+        /* Logo */
+        header img {
+            margin: 0 0 0 20px;
+            height: 80px;
+        }
+        /* End Logo */
+        /* Navigation Menu */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            list-style: none;
+        }
+        .top-nav li {
+            display: inline-block;
+        }
+        .top-nav li a {
+            margin: 0 20px 0 0;
+            padding: 3px;
+        }
+        /* End Navigation Menu */
+        /* End Header */
+        /* Main */
+        main {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 1200px;
+
+
+            border: 1px solid green;
+        }
+        /* End Main */
+        /* Article */
+        article {
+            width: 60%;
+
+            border: 1px solid red;
+        }
+        /* End Article */
+        /* Sidebar */
+        aside {
+            display: inline-block;
+            width: 39%;
+            height: min-content;
+
+
+            border: 1px solid yellow;
+        }
+        .sidebar {
+            list-style: none;
+        }
+        /* End Sidebar */
     </style>
 
 </head>
