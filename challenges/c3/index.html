@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* Box for text */
+        .container {
+            position: relative;
+            width: 200px;
+            height: 40px;
+            overflow: hidden;
+        }
+        /* Top text */
+        .top {
+            position: absolute;
+            width: 100%;
+            animation: move 2s infinite linear;
+        }
+        /* Actual text */
+        .top:before {
+            content: "AWESOME ALPHA";
+            color: #f00;
+            /* position: relative; */
+        }
+        /* "invisible" background */
+        .top:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+        /* End top text */
+
+        /* Bottom text */
+        .bottom {
+            position: absolute;
+            left: -100%;
+            width: 100%;
+            animation: move 2s infinite linear;
+            animation-delay: 0.25s;
+        }
+        /* Actual text */
+        .bottom:before {
+            content: "AWESOME ALPHA";
+            color: #000;
+            /* position: relative; */
+            /* z-index: 2; */
+        }
+        /* "invisible" background */
+        .bottom:after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 50%;
+            left: 0;
+            background-color: transparent;
+        }
+        /* End bottom text */
+
+
+        /* animation to slide in and out */
+        @keyframes move {
+            0% {
+                left: -100%;
+            }
+            25% {
+                left: 0;
+            }
+            75% {
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="top"></span>
+        <span class="bottom"></span>
+    </div>
+</body>
+</html>
